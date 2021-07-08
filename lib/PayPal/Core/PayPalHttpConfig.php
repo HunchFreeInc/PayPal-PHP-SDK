@@ -60,7 +60,7 @@ class PayPalHttpConfig
     {
         $this->url = $url;
         $this->method = $method;
-        $this->curlOptions = $this->getHttpConstantsFromConfigs($configs, 'http.') + self::$defaultCurlOptions;
+        $this->curlOptions = $this->getHttpConstantsFromConfigs('http.', $configs) + self::$defaultCurlOptions;
         // Update the Cipher List based on OpenSSL or NSS settings
         $curl = curl_version();
         $sslVersion = isset($curl['ssl_version']) ? $curl['ssl_version'] : '';
@@ -283,7 +283,7 @@ class PayPalHttpConfig
      * @param       $prefix
      * @return array
      */
-    public function getHttpConstantsFromConfigs($configs = array(), $prefix)
+    public function getHttpConstantsFromConfigs($prefix, $configs = array())
     {
         $arr = array();
         if ($prefix != null && is_array($configs)) {
