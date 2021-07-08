@@ -1,5 +1,5 @@
 {
-    "name": "hunchfreeinc/paypal-php-sdk",
+    "name": "paypal/rest-api-sdk-php",
     "description": "PayPal's PHP SDK for REST APIs",
     "keywords": ["paypal", "payments", "rest", "sdk"],
     "type": "library",
